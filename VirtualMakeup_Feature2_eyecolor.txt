@@ -1,0 +1,28 @@
+## Eyecolor ##
+
+1. Identify coordinates
+
+1.1 Show all points with indexes
+
+1.11 Find the index numbers for the eyes
+
+2. Define coordinates for right and left eye from the indexes
+
+2.1 Find corner coordinates for the ROI for right and left eye
+
+3. Find the center of the eyes with houghcircles
+   Inner circle of left eye is not findable with Houghcircles (Result None), probably due to the light which is reflected in the eye
+
+3.1 Make the outer radius smaller in order not to change the color of the dermis
+
+4. Create roi masks of the eyes and invert them
+
+5. Define colors
+
+5.1 Change Color in inverted mask as basis for seamless cloning
+
+5.2 Blur the inverted mask
+
+6. Perform seamless cloning
+
+7. Put back changed roi into the basis picture

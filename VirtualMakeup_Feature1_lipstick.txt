@@ -1,0 +1,39 @@
+## Lip stick ##
+
+1. Identify coordinates
+
+1.1 Show all landmark points
+
+1.2 Identify Lip index points
+
+1.3 Segment the lip in sub-parts
+
+    Manually divide the lip in fewer points in order to keep the shape with hull.
+    This is especially relevant when using a picture where one has the mouth more open
+
+2. Find Lip ROI
+
+3. Create lip mask
+
+4. Cut out ROI + ROI mask
+
+5. Define the colors
+
+6. Change the color to the wanted one in the inverted mask
+
+6.1 Dilate the inverted mask
+    
+    Using a small kernel
+
+6.2 Change the color
+
+    Use np.where to change to the wanted color.
+
+6.3 Gaussian Blur
+
+    Gaussian Blur the mask, using different kernel sizes for x and y
+
+6.4 Perform mixed seamless cloning
+
+7. Reinsert ROI
+
